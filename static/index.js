@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const stripe = Stripe('pk_test_51Oh1NEHNaR6ZCIEkOzgexIttW23fQ2CYM6V88w02oBiBbwADOewpZ8vCJg6WMdSaK7WDyTm79izloWqqPFN2K9Br00Cc2rVR2e', {
+    const stripe = Stripe('pk_test_51OwlMtHBflvROtxo7OIsLUrAXo4YHazhZm8l4Gm13HVPw2qmov7EvIhJJ8kGgnOvBVdMp7LhEmQVDuFuX8sIFX7Q00xPmm8aeL', {
         apiVersion: '2020-08-27',
     });
 
     // On page load, we create a PaymentIntent on the server so that we have its clientSecret to
     // initialize the instance of Elements below. The PaymentIntent settings configure which payment
     // method types to display in the PaymentElement.
-    const { client_secret: clientSecret} = await fetch('/secret').then(r => r.json());
+    const {client_secret: clientSecret} = await fetch('/secret').then(r => r.json());
 
     addMessage(`Client secret returned. ${clientSecret}`);
 
